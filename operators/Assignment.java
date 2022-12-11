@@ -16,7 +16,8 @@ public class Assignment {
     t2.level = 47;
     System.out.println("1: t1.level: " + t1.level +
       ", t2.level: " + t2.level);
-    t1 = t2;
+    // t1 = t2; 引用
+    t1.level = t2.level; //实际对象
     System.out.println("2: t1.level: " + t1.level +
       ", t2.level: " + t2.level);
     t1.level = 27;
