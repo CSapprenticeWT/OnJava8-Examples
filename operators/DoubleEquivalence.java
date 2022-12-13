@@ -13,21 +13,33 @@ public class DoubleEquivalence {
   public static void test(double x1, double x2) {
     // x1.equals(x2) // Won't compile
     System.out.printf("%e==%e %b%n", x1, x2, x1 == x2);
+
     Double d1 = x1;
     Double d2 = x2;
     show("Automatic", d1, d2);
+
     Double r1 = new Double(x1);
     Double r2 = new Double(x2);
     show("new Double()", r1, r2);
+
     Double v1 = Double.valueOf(x1);
     Double v2 = Double.valueOf(x2);
     show("Double.valueOf()", v1, v2);
+
   }
   public static void main(String[] args) {
+
+    //比较0和最小的浮点数
     test(0, Double.MIN_VALUE);
+
     System.out.println("------------------------");
+
+    //最大值 和 （最大值 和 （最小值只差的一百万倍））比较
     test(Double.MAX_VALUE,
       Double.MAX_VALUE - Double.MIN_VALUE * 1_000_000);
+
+    System.out.println("------------------------");
+    test(2.1, 3.5);
   }
 }
 /* Output:
