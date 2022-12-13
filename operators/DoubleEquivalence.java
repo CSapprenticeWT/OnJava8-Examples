@@ -34,12 +34,19 @@ public class DoubleEquivalence {
 
     System.out.println("------------------------");
 
-    //最大值 和 （最大值 和 （最小值只差的一百万倍））比较
+    //最大值 和 （最大值 和 （最小值只差的一百万倍））比较 一个非常大的数值减去一个相对较小的数值,
+    //非常大的数值并不会发生显著变化。这个叫做 <b> 舍入误差 <\b>
     test(Double.MAX_VALUE,
       Double.MAX_VALUE - Double.MIN_VALUE * 1_000_000);
 
     System.out.println("------------------------");
     test(2.1, 3.5);
+
+    System.out.println("------------------------");
+    System.out.println(Double.MIN_VALUE); //2^-1074
+    System.out.println(Double.MAX_VALUE);
+
+
   }
 }
 /* Output:
